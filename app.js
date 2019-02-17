@@ -18,10 +18,12 @@ var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
    indexRoutes      = require("./routes/index");
 
-var url = process.env.DATABASEURL || 'mongodb://localhost:27017/yelp_camp_v17'
-mongoose.connect(url);
-    
-//mongoose.connect('mongodb://localhost:27017/yelp_camp_v17', { useNewUrlParser: true });
+// var url = process.env.DATABASEURL || 'mongodb://localhost:27017/yelp_camp_v17'
+// mongoose.connect(url);
+
+ //console.log('mongodb://localhost:27017/yelp_camp_v18deploy');   
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
+mongoose.set('useCreateIndex', true);
 //mongoose.connect('mongodb+srv://oscar:salam@persiancamp-5rpnm.mongodb.net/test?retryWrites=true');
 
 
